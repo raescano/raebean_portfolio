@@ -1,10 +1,417 @@
-/* SITE 
+/* PORTFOLIO CSS
+
+------------------------------------
+
+#CONTENT
+    #TYPOGRAPHY
+        #BODY
+        #HEADINGS
+        #PARAGRAPHS
+        #LINKS
+        #LISTS
+    #COMPONENTS
+        #BUTTONS
+    #STRUCTURE
+        #HEADER
+        #FOOTER
+        #CONTENT
+    #NAVIGATION
+        #SITE NAV
+        #PROJECT NAV
+
+------------------------------------
 
 */
 
 /* TYPOGRAPHY */
 
-/* NAVIGATION LINKS */
-.site-navigation .project-nav ul li {
+body {
+    font-family: poppins, sans-serif;
+    font-size: 87.5%;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5em;
+}
+
+/* HEADING */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: poppins, sans-serif;
+    margin: .5em 0;
+}
+
+h1 {
+    font-size: 3em;
+    /* 48px / 16px = 3em */
+    line-height: 1em;
+}
+
+h2 {
+    font-size: 2.25em;
+    /* 36px / 16px = 2.25em */
+    line-height: 1em;
+}
+
+h3 {
+    font-size: 1.5em;
+    /* 24px / 16px = 1.5em */
+    line-height: 1.2em;
+}
+
+h4 {
+    font-size: 1.3125em;
+    /* 21px / 16px = 1.3125em */
+    line-height: 1.3em;
+}
+
+h5 {
+    font-size: 1.125em;
+    /* 18px / 16px = 1.125em */
+    line-height: 1.4em;
+}
+
+h6 {
+    font-size: 1em;
+    /* 16px / 16px = 1em */
+    line-height: 1.5em;
+}
+
+/* PARAGRAPH */
+
+p {
+    margin: 0 0 .5em 0;
+}
+
+
+/* LINKS */
+
+a {
+    color: #325547;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7F9F92;
+    text-decoration: underline;
+}
+
+/* LISTS */
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    padding-bottom: 1em;
+}
+
+ul ul,
+ol ul,
+ol ol,
+ol ul {
+    padding-bottom: 0;
+}
+
+li {
+    margin-left: 1.875em;
     list-style: none;
+}
+
+/* BUTTONS */
+
+button {
+    font-size: inherit;
+}
+
+button,
+a.button {
+    display: inline-block;
+    background-color: #ffd1d1;
+    border: 1px solid #ffd1d1;
+    color: #fff;
+    padding: .75em 1em;
+    -webkit-border-radius: .32em;
+    -moz-border-radius: .32em;
+    border-radius: .32em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    border: none;
+    cursor: pointer;
+    line-height: 1em;
+}
+
+button.alt,
+a.button.alt {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #ffd1d1;
+    color: #ffd1d1;
+}
+
+button:hover,
+a.button:hover {
+    background-color: #fca9a9;
+    color: #fff;
+    border-color: #fca9a9;
+    text-decoration: none;
+}
+
+/* LAYOUT */
+
+/* 
+#MEDIA QUERIES (Mobile First)
+        #DEFAULT+ (Mobile First - Default Settings in the CSS Above)
+        #SMALL- (Mobile Only Overrides) - max-width: 767px
+        #MEDIUM+ (Tablet) - min-width: 768px
+        #LARGE+ (Desktop+) - min-width: 1250px */
+/* SMALL+ (Mobile First Default) */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 92%;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* SMALL- MEDIA QUERY (e.g. for mobile overrides) */
+
+@media (max-width: 767px) {
+    /* Inherits Small/Mobile Body Type from Above */
+    /* Inherits Small/Mobile Fluid Width from Above */
+}
+
+/* #MEDIUM+ MEDIA QUERY */
+@media (min-width: 768px) {
+    /* Inherits Small/Mobile Body Type From Above */
+    /* Inherits Small/Mobile Fluid Width from Above */
+}
+
+/* #LARGE+ MEDIA QUERY */
+@media (min-width: 1050px) {
+
+    /* LARGE BODY TYPE */
+    body {
+        font-size: 100%;
+        /* 16px; */
+    }
+
+    /* FIXED WIDTH */
+    .container {
+        width: 900px;
+        padding: 0 50px;
+    }
+}
+
+/* EXTRA-LARGE+ MEDIA QUERY */
+@media (min-width: 1250px) {
+
+    /* EXTRA-LARGE BODY TYPE */
+    body {
+        font-size: 112.5%;
+        /* 18px; */
+    }
+
+    /* FIXED WIDTH */
+    .container {
+        width: 1100px;
+    }
+}
+
+
+/* Default Grid (on SMALL+ Screen Sizes) */
+.row {
+    margin: 0;
+}
+
+.column {
+    margin: 0 0 3em 0;
+}
+
+/* Medium Grid (on MEDUIM+ Screen Sizes) */
+@media (min-width: 768px) {
+    .column {
+        float: left;
+        margin-right: 8%;
+        /* COLUMN GUTTER */
+    }
+
+    .column:last-child {
+        margin-right: 0;
+    }
+
+    .column.centered {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .one-whole.column {
+        width: 100%;
+    }
+
+    .one-half.column {
+        width: 46%;
+    }
+
+    .one-third.column {
+        width: 28%;
+    }
+
+    .two-thirds.column {
+        width: 64%;
+    }
+
+    .one-fourth.column {
+        width: 19%;
+    }
+
+    .one-fifth.column {
+        width: 13.6%;
+    }
+}
+
+/* #CLEARFIXES */
+.group:after,
+.row:after,
+.container:after,
+.nav:after {
+    content: "";
+    display: table;
+    clear: both;
+    font-size: 0;
+}
+
+/* STRUCTURE */
+
+/* SITE HEADER */
+
+.site-header {
+    padding-top: 1em;
+}
+
+.site-header .container:after {
+    display: block;
+    content: '';
+}
+
+/* FOOTER: PROJECT NAV */
+
+.project-nav {}
+
+.project-nav .container {
+    padding-top: 0;
+    padding-bottom: 1em;
+}
+
+.project-nav .container:before {
+    display: block;
+    content: '';
+    padding-bottom: .5em;
+}
+
+/* SITE BRANDING */
+
+.site-branding {
+    text-align: left;
+}
+
+.site-branding h1 {
+    margin: 0;
+    line-height: 1em;
+}
+
+.site-branding p {}
+
+@media (min-width: 768px) {
+    .site-branding {
+        float: left;
+    }
+}
+
+/* MAIN CONTENT */
+
+.site-content {
+    padding-top: 2em;
+}
+
+.site-content .container {
+    background-color: #BDD5CB;
+}
+
+/* SITE NAVIGATION */
+
+.site-navigation {
+    text-align: center;
+    display: block;
+}
+
+.site-navigation ul {
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation ul li a {
+    display: block;
+    padding: 1em;
+}
+
+@media (min-width: 768px) {
+    .site-header .site-navigation {
+        float: right;
+    }
+
+    .site-navigation ul {
+        border-top: none;
+    }
+}
+
+/* PROJECT NAV */
+
+.project-nav {
+    text-align: center;
+    display: block;
+}
+
+.project-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.project-nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.project-nav ul li a {
+    display: block;
+    padding: 1em;
+}
+
+@media (min-width: 768px) {
+    .project-nav {
+        float: center;
+    }
+
+    .project-nav ul {
+        border-top: none;
+    }
 }
